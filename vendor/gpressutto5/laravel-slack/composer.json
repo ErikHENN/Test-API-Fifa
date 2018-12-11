@@ -1,0 +1,47 @@
+{
+    "name": "gpressutto5/laravel-slack",
+    "description": "Slack notification for Laravel as it should be.",
+    "keywords": ["laravel", "slack"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Guilherme Pressutto",
+            "email": "gpressutto5@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "guzzlehttp/guzzle": "^6.3",
+        "illuminate/notifications": "^5.5",
+        "illuminate/support": "^5.5"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.5",
+        "phpunit/phpunit": "^6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pressutto\\LaravelSlack\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --colors=always"
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Pressutto\\LaravelSlack\\ServiceProvider"
+            ],
+            "aliases": {
+                "Slack": "Pressutto\\LaravelSlack\\Facades\\Slack"
+            }
+        }
+    }
+}
